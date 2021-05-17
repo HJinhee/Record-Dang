@@ -56,28 +56,18 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this@SignInActivity, "아이디/비밀번호를 확인해주세요!", Toast.LENGTH_SHORT)
                     .show()
             } else {
-//                val transaction = supportFragmentManager.beginTransaction()
-//                val homeFragment = HomeFragment()
-//                transaction.replace(R.id.nav_host_main, homeFragment)
-//                transaction.addToBackStack(null)
-//                transaction.commit()
-
-                val intent = Intent(this@SignInActivity, MainActivity::class.java)
-                mainActivityLauncher.launch(intent)
-
-//                transaction.add(R.id.signin_layout, homeFragment)
-//                transaction.commit()
+                startMainActivity()
 
             }
         }
     }
 
 
-//    private fun startHomeFragment(){
-//        //HomeActivity로 이동
-//        val intent = Intent(this@SignInActivity, HomeFragment::class.java)
-//        startActivity(intent)
-//    }
+    private fun startMainActivity(){
+        //MainActivity로 이동
+        val intent = Intent(this@SignInActivity, MainActivity::class.java)
+        mainActivityLauncher.launch(intent)
+   }
 
 
     private fun signUpClickEvent() {
