@@ -14,6 +14,10 @@ class FoodBeforeActivity : AppCompatActivity() {
         binding = ActivityFoodBeforeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.ivFoodBeforeBack.setOnClickListener {
+            onBackPressed()
+        }
+
 
 
 
