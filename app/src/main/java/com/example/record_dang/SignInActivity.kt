@@ -9,7 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.record_dang.databinding.ActivitySignInBinding
 import com.example.record_dang.presentation.home.HomeFragment
-import com.example.record_dang.R
 
 
 class SignInActivity : AppCompatActivity() {
@@ -21,6 +20,8 @@ class SignInActivity : AppCompatActivity() {
 
         }
 
+    val homeFragment = HomeFragment()
+
     private val signUpActivityLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             //데이터를 받아서 할 일이 들어가는 칸
@@ -28,6 +29,12 @@ class SignInActivity : AppCompatActivity() {
                 if (intent != null) {
                     binding.etLoginId.setText(it.data?.extras?.getString("userId"))
                     binding.etLoginPw.setText(it.data?.extras?.getString("userPw"))
+
+                    val bundle = Bundle()
+                    bundle.putString("userName", it.data?.extras?.getString("userName"))
+
+                    homeFragment.arguments = bundle
+
                 }
             }
 

@@ -6,15 +6,15 @@
     app:startDestination="@id/recordFragment">
 
     <fragment
-        android:id="@+id/recordFragment"
-        android:name="com.example.record_dang.presentation.record.RecordFragment"
-        android:label="fragment_record"
-        tools:layout="@layout/fragment_record" />
-    <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.record_dang.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.example.record_dang.presentation.record.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" />
     <fragment
         android:id="@+id/graphFragment"
         android:name="com.example.record_dang.presentation.graph.GraphFragment"
