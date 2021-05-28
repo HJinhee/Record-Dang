@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecordDang">
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".presentation.record.FoodBeforeActivity"></activity>
+        <activity android:name=".presentation.record.FoodAfterActivity" />
+        <activity android:name=".presentation.record.FoodABActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
@@ -20,8 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
