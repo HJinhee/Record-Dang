@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.record_dang.R
+import com.example.record_dang.data.UserFoodRecoInfo
 import com.example.record_dang.databinding.ActivityFoodBeforeBinding
 import com.example.record_dang.databinding.DialogIngredBinding
 import com.google.android.material.chip.Chip
@@ -16,6 +17,8 @@ class FoodBeforeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFoodBeforeBinding
     private lateinit var bindingDialog: DialogIngredBinding
+
+    private lateinit var foodBeforeListAdapter: FoodBeforeListAdapter
 
     var arr = listOf<String>()
 
@@ -29,6 +32,7 @@ class FoodBeforeActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        setFoodBeforeAdapter()
         radioCheck()
 
         val dlg = AlertDialog.Builder(this).create()
@@ -65,10 +69,12 @@ class FoodBeforeActivity : AppCompatActivity() {
                 R.id.food_before_radio_refri -> {
                     binding.clFoodYesRefi.visibility = View.VISIBLE
                     binding.clFoodNoRefi.visibility = View.GONE
+                    setFoodBefRefListData()
                 }
                 R.id.food_before_radio_default -> {
                     binding.clFoodNoRefi.visibility = View.VISIBLE
                     binding.clFoodYesRefi.visibility = View.GONE
+                    setFoodBefDefListData()
                 }
             }
         }
@@ -89,5 +95,60 @@ class FoodBeforeActivity : AppCompatActivity() {
             binding.chipsGroupIngred.addView(mChip)
 
         }
+    }
+
+    private fun setFoodBeforeAdapter(){
+        // 1. 우리가 사용할 어뎁터의 초기 값을 넣어준다
+        foodBeforeListAdapter = FoodBeforeListAdapter()
+
+    }
+
+    private fun setFoodBefRefListData(){
+        // 2. RecyclerView 에 어뎁터를 우리가 만든 어뎁터로 만들기
+        binding.recyclerviewRecommendRefri.adapter = foodBeforeListAdapter
+        foodBeforeListAdapter.foodList.removeAll(listOf<UserFoodRecoInfo>())
+        foodBeforeListAdapter.foodList.addAll(
+            listOf<UserFoodRecoInfo>(
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "된찌"
+                ),
+                UserFoodRecoInfo(
+                    checked = true,
+                    foodName = "밥"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "고기"
+                )
+            )
+        )
+
+        foodBeforeListAdapter.notifyDataSetChanged()
+    }
+
+    private fun setFoodBefDefListData(){
+        // 2. RecyclerView 에 어뎁터를 우리가 만든 어뎁터로 만들기
+        binding.recyclerviewRecommendDefault.adapter = foodBeforeListAdapter
+        foodBeforeListAdapter.foodList.removeAll(listOf<UserFoodRecoInfo>())
+
+        foodBeforeListAdapter.foodList.addAll(
+            listOf<UserFoodRecoInfo>(
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "된장찌개"
+                ),
+                UserFoodRecoInfo(
+                    checked = true,
+                    foodName = "밥"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "고기"
+                )
+            )
+        )
+
+        foodBeforeListAdapter.notifyDataSetChanged()
     }
 }
