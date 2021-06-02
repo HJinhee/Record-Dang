@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecordDang">
-        <activity android:name=".presentation.record.FoodBeforeActivity"></activity>
+        <activity android:name=".presentation.IngredDialog"></activity>
+        <activity android:name=".presentation.record.FoodBeforeActivity" />
         <activity android:name=".presentation.record.FoodAfterActivity" />
         <activity android:name=".presentation.record.FoodABActivity" />
         <activity android:name=".SignUpActivity" />

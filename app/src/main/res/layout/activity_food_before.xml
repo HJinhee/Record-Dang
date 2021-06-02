@@ -57,6 +57,15 @@
                 android:src="@drawable/ic_baseline_add_circle_outline_24"
                 />
 
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_group_ingred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_food_ingred_save"
+                app:chipSpacing="8dp"
+                app:singleSelection="false">
+            </com.google.android.material.chip.ChipGroup>
+
 
             <!--버튼 누르면 음식 추천 리스트-->
             <Button
