@@ -1,14 +1,19 @@
 package com.example.record_dang
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.record_dang.databinding.ActivityFoodBeforeBinding
 import com.example.record_dang.databinding.ActivityMainBinding
+import com.example.record_dang.presentation.record.FoodBeforeActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

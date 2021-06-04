@@ -1,24 +1,36 @@
 package com.example.record_dang.presentation.record
 
+import android.app.PendingIntent.getActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.record_dang.R
 import com.example.record_dang.data.UserFoodRecoInfo
 import com.example.record_dang.databinding.ActivityFoodBeforeBinding
 import com.example.record_dang.databinding.DialogIngredBinding
+import com.example.record_dang.databinding.ItemRecordBeforeFoodBinding
 import com.google.android.material.chip.Chip
+import com.google.android.youtube.player.*
 
 
-class FoodBeforeActivity : AppCompatActivity() {
+class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener{
+    private val TAG = "YoutubeActivity"
+    val YOUTUBE_VIDEO_ID = "Evfe8GEn33w"
+    val YOUTUBE_PLAYLIST = "UCU3jy5C8MB-JvSw_86SFV2w"
 
     private lateinit var binding: ActivityFoodBeforeBinding
     private lateinit var bindingDialog: DialogIngredBinding
+    private lateinit var bindingItem: ItemRecordBeforeFoodBinding
 
     private lateinit var foodBeforeListAdapter: FoodBeforeListAdapter
+
+
 
     var arr = listOf<String>()
 
@@ -26,6 +38,7 @@ class FoodBeforeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFoodBeforeBinding.inflate(layoutInflater)
         bindingDialog = DialogIngredBinding.inflate(layoutInflater)
+        bindingItem = ItemRecordBeforeFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.ivFoodBeforeBack.setOnClickListener {
@@ -59,6 +72,44 @@ class FoodBeforeActivity : AppCompatActivity() {
             }
 
             dlg.show()
+        }
+
+        //binding.youtubeView.initialize("6RQ-bBdASvk", this)
+
+        foodBeforeListAdapter.
+        bindingItem.itemBtnYoutube.setOnClickListener {
+
+            Toast.makeText(this@FoodBeforeActivity, "button click", Toast.LENGTH_SHORT).show()
+            initYoutube()
+
+        }
+
+    }
+
+//    public fun onClickYoutube(){
+//        initYoutube()
+//        Log.d("youtube","click")
+//    }
+
+    fun initYoutube(){
+        Log.d("youtube","initstart")
+
+//        val layout = layoutInflater.inflate(R.layout.activity_food_before, null) as ConstraintLayout
+        val playerView = YouTubePlayerView(this)
+
+        if(YouTubeApiServiceUtil.isYouTubeApiServiceAvailable(this).equals(YouTubeInitializationResult.SUCCESS)){
+            //This means that your device has the Youtube API Service (the app) and you are safe to launch it.
+            playerView.layoutParams = ConstraintLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            binding.root.addView(playerView)
+            //layout.addView(playerView)
+
+            playerView.initialize(getString(R.string.GOOGLE_API_KEY), this)
+            Log.d("youtube","initsuccess")
+
+        }else{
+            // Log the outcome, take necessary measure, like playing the video in webview :)
+            Log.d("youtube","initfail")
         }
 
     }
@@ -150,5 +201,76 @@ class FoodBeforeActivity : AppCompatActivity() {
         )
 
         foodBeforeListAdapter.notifyDataSetChanged()
+    }
+
+    override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, youTubePlayer: YouTubePlayer?,
+                                         wasRestored: Boolean) {
+        Log.d(TAG, "onInitializationSuccess: provider is ${provider?.javaClass}")
+        Log.d(TAG, "onInitializationSuccess: youTubePlayer is ${youTubePlayer?.javaClass}")
+        Toast.makeText(this, "Initialized Youtube Player successfully", Toast.LENGTH_SHORT).show()
+
+        youTubePlayer?.setPlayerStateChangeListener(playerStateChangeListener)
+        youTubePlayer?.setPlaybackEventListener(playbackEventListener)
+
+        if (!wasRestored) {
+            youTubePlayer?.cueVideo(YOUTUBE_VIDEO_ID)
+        }
+    }
+
+    override fun onInitializationFailure(provider: YouTubePlayer.Provider?,
+                                         youTubeInitializationResult: YouTubeInitializationResult?) {
+        val REQUEST_CODE = 0
+
+        if (youTubeInitializationResult?.isUserRecoverableError == true) {
+            youTubeInitializationResult.getErrorDialog(this, REQUEST_CODE).show()
+        } else {
+            val errorMessage = "There was an error initializing the YoutubePlayer ($youTubeInitializationResult)"
+            Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+            Log.d(TAG, errorMessage)
+
+        }
+    }
+
+    private val playbackEventListener = object: YouTubePlayer.PlaybackEventListener {
+        override fun onSeekTo(p0: Int) {
+        }
+
+        override fun onBuffering(p0: Boolean) {
+        }
+
+        override fun onPlaying() {
+            Toast.makeText(this@FoodBeforeActivity, "Good, video is playing ok", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onStopped() {
+            Toast.makeText(this@FoodBeforeActivity, "Video has stopped", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onPaused() {
+            Toast.makeText(this@FoodBeforeActivity, "Video has paused", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private val playerStateChangeListener = object: YouTubePlayer.PlayerStateChangeListener {
+        override fun onAdStarted() {
+            Toast.makeText(this@FoodBeforeActivity, "Click Ad now, make the video creator rich!", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onLoading() {
+        }
+
+        override fun onVideoStarted() {
+            Toast.makeText(this@FoodBeforeActivity, "Video has started", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onLoaded(p0: String?) {
+        }
+
+        override fun onVideoEnded() {
+            Toast.makeText(this@FoodBeforeActivity, "Congratulations! You've completed another video.", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onError(p0: YouTubePlayer.ErrorReason?) {
+        }
     }
 }

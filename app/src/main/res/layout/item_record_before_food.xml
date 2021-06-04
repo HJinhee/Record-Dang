@@ -21,6 +21,7 @@
             android:checked="@{foodData.checked}"
             android:text="@{foodData.foodName}"
             android:textSize="18sp" />
+        
 
         <Button
             android:id="@+id/item_btn_youtube"
