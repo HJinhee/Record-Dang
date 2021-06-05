@@ -20,6 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_food_before_back"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -74,19 +76,21 @@
                     android:id="@+id/chips_group_ingred"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/iv_add_ingred">
+                    app:layout_constraintTop_toBottomOf="@id/btn_food_ingred_save"
+                    app:layout_constraintBottom_toTopOf="@id/recyclerview_recommend_refri">
 
                 </com.google.android.material.chip.ChipGroup>
 
 
                 <!--버튼 누르면 음식 추천 리스트-->
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_food_ingred_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="입력 완료"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/light_green_1"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview_recommend_refri"

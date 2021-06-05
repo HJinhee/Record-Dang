@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <CheckBox
             android:id="@+id/item_before_food_checkbox_food"
@@ -23,7 +24,7 @@
             android:textSize="18sp" />
         
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/item_btn_youtube"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginHorizontal="20dp"
+            android:background="@color/light_green_2"
             android:text="레시피 보러가기" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

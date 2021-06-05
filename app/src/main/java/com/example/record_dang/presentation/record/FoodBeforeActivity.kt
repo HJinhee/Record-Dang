@@ -76,7 +76,6 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
 
         //binding.youtubeView.initialize("6RQ-bBdASvk", this)
 
-        foodBeforeListAdapter.
         bindingItem.itemBtnYoutube.setOnClickListener {
 
             Toast.makeText(this@FoodBeforeActivity, "button click", Toast.LENGTH_SHORT).show()

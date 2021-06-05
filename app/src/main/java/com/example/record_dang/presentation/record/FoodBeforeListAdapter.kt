@@ -31,10 +31,12 @@ class FoodBeforeListAdapter : RecyclerView.Adapter<FoodBeforeListAdapter.FoodBef
             parent,
             false
         )
-        val bindingActivity = ActivityFoodBeforeBinding.inflate(LayoutInflater.from(parent.context),
+        val bindingActivity = ActivityFoodBeforeBinding.inflate(
+            LayoutInflater.from(parent.context),
             parent,
-            false)
-        return FoodBeforeViewHolder(binding,bindingActivity)
+            false
+        )
+        return FoodBeforeViewHolder(binding, bindingActivity)
 
 
     }
@@ -50,27 +52,39 @@ class FoodBeforeListAdapter : RecyclerView.Adapter<FoodBeforeListAdapter.FoodBef
     class FoodBeforeViewHolder(
         private val binding: ItemRecordBeforeFoodBinding,
         private val bindingActivity: ActivityFoodBeforeBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root), YouTubePlayer.OnInitializedListener {
         fun onBind(userFoodRecoInfo: UserFoodRecoInfo) {
             binding.foodData = userFoodRecoInfo
 
-//            binding.itemBtnYoutube.setOnClickListener(View.OnClickListener { v ->
-//                onItemClickListener!!.onItemClick(
-//                    v,
-//                    position
-//                ){
-////                val intent = Intent(Intent.ACTION_SEARCH)
-////                intent.setPackage("com.google.android.youtube")
-////
-////                intent.putExtra("query","된찌")
-////
-////                startActivity(intent)
-//                    // bindingActivity.initYoutube(activity = FoodBeforeActivity())
-//                    //  bindingActivity.youtubeView.initialize("Evfe8GEn33w", this)
+            binding.itemBtnYoutube.setOnClickListener {
+
+//                val intent = Intent(Intent.ACTION_SEARCH)
+//                intent.setPackage("com.google.android.youtube")
 //
+//                intent.putExtra("query","된찌")
 //
-//                }
-//            })
+//                startActivity(intent)
+                // bindingActivity.initYoutube(activity = FoodBeforeActivity())
+                  bindingActivity.youtubeView.initialize("Evfe8GEn33w", this)
+
+
+            }
+
+        }
+
+        override fun onInitializationSuccess(
+            p0: YouTubePlayer.Provider?,
+            p1: YouTubePlayer?,
+            p2: Boolean
+        ) {
+
+        }
+
+        override fun onInitializationFailure(
+            p0: YouTubePlayer.Provider?,
+            p1: YouTubeInitializationResult?
+        ) {
+
         }
 
     }
