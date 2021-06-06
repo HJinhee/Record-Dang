@@ -29,5 +29,6 @@
     <string name="GOOGLE_API_KEY">AIzaSyBjlyvhgAKeCDOpD-F0cnxZAFWoZHTMsTg</string>
 
     <string name="msg_token_fmt" translatable="false">토큰: %s</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
 
 </resources>
