@@ -19,8 +19,9 @@
             android:id="@+id/tv_home_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/jinhee"
-            android:textSize="25sp"
+            android:text="한진희"
+            android:textSize="30sp"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,8 +33,10 @@
             android:layout_height="wrap_content"
             android:text="님의 "
             android:textSize="25sp"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintStart_toEndOf="@id/tv_home_user_name"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <TextView
@@ -41,9 +44,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="오늘"
+            android:fontFamily="@font/black_han_sans_regular"
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/tv_home_nim"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <TextView
@@ -52,6 +57,7 @@
             android:layout_height="wrap_content"
             android:text="  ("
             android:textSize="25sp"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintStart_toEndOf="@id/tv_home_today"
             app:layout_constraintTop_toTopOf="parent"
             />
@@ -60,8 +66,9 @@
             android:id="@+id/tv_home_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00"
+            android:text="06"
             android:textSize="25sp"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintStart_toEndOf="@id/tv_home_month_prev"
             app:layout_constraintTop_toTopOf="parent"
             />
@@ -71,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="."
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintStart_toEndOf="@id/tv_home_month"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +88,8 @@
             android:id="@+id/tv_home_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00"
+            android:text="07"
+            android:fontFamily="@font/black_han_sans_regular"
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/tv_home_month_next"
             app:layout_constraintTop_toTopOf="parent"
@@ -91,6 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=")"
+            android:fontFamily="@font/black_han_sans_regular"
             android:textSize="25sp"
             app:layout_constraintStart_toEndOf="@id/tv_home_date"
             app:layout_constraintTop_toTopOf="parent"

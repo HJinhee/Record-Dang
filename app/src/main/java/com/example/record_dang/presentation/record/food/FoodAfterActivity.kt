@@ -30,6 +30,10 @@ class FoodAfterActivity : AppCompatActivity() {
         //setFoodAfterListData()
 
         binding.btnAddFood.setOnClickListener { addFoodAfterListData() }
+
+        binding.btnKcalCalcul.setOnClickListener {
+            binding.etTodayKacl.setText("510")
+        }
     }
 
 

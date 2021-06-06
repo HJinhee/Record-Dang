@@ -116,10 +116,53 @@
             app:layout_constraintTop_toBottomOf="@id/setting_exercise_machine"
             app:layout_constraintStart_toStartOf="@id/setting_exercise_machine"
             android:text="알림"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/dx_baby_love"
-            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/black_han_sans_regular"
+            android:textSize="25sp"
             />
+
+        <Switch
+            android:id="@+id/setting_insulin_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:switchMinWidth="50dp"
+            android:switchPadding="150dp"
+            android:text="인슐린 주입 유무"
+            android:textSize="20dp"
+            android:fontFamily="@font/dx_baby_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_alarm" />
+
+        <Switch
+            android:id="@+id/setting_food_alarm_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:switchMinWidth="50dp"
+            android:switchPadding="180dp"
+            android:text="식사 후 1시간"
+            android:textSize="20dp"
+            android:fontFamily="@font/dx_baby_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_insulin_alarm" />
+
+        <Switch
+            android:id="@+id/setting_food_alarm_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:switchMinWidth="50dp"
+            android:switchPadding="180dp"
+            android:text="식사 후 2시간"
+            android:textSize="20dp"
+            android:fontFamily="@font/dx_baby_love"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_food_alarm_1" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "669276682686",
+    "project_id": "record-dang",
+    "storage_bucket": "record-dang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669276682686:android:1ae27ece47e56c0b8ee1ef",
+        "android_client_info": {
+          "package_name": "com.example.record_dang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669276682686-1alkdnemjs9nbuk9nbdnsgq790v8555i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVviRG57AhHnnvb-Q7lLVx6vfpGnoxcNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669276682686-1alkdnemjs9nbuk9nbdnsgq790v8555i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
