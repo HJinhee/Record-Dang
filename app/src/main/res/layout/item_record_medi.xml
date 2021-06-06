@@ -12,40 +12,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <EditText
             android:id="@+id/item_medi_kind"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_medi_time"
+            android:hint="약물"
             android:text="@{recordMediData.mediName}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_medi_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_medi_location"
             app:layout_constraintStart_toEndOf="@id/item_medi_kind"
+            android:hint="시간"
             android:text="@{recordMediData.mediTime}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_medi_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_medi_time"
             app:layout_constraintEnd_toStartOf="@id/item_medi_count"
+            android:hint="위치"
             android:text="@{recordMediData.mediLocation}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_medi_count"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_medi_location"
+            android:hint="횟수"
             android:text="@{recordMediData.mediCount}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

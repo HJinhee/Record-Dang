@@ -12,40 +12,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <EditText
             android:id="@+id/item_exercise_kind"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_exercise_time"
+            android:hint="운동"
             android:text="@{recordExerciseData.exerciseName}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_exercise_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_exercise_distance"
             app:layout_constraintStart_toEndOf="@id/item_exercise_kind"
+            android:hint="시간"
             android:text="@{recordExerciseData.exerciseTime}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_exercise_distance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_exercise_time"
             app:layout_constraintEnd_toStartOf="@id/item_exercise_kcal"
+            android:hint="거리"
             android:text="@{recordExerciseData.exerciseName}" />
 
-        <TextView
+        <EditText
             android:id="@+id/item_exercise_kcal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_exercise_distance"
+            android:hint="칼로리"
             android:text="@{recordExerciseData.exerciseTime}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
