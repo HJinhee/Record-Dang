@@ -2,6 +2,8 @@ package com.example.record_dang.presentation.record.food
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.record_dang.data.RecordExerciseInfo
 import com.example.record_dang.data.RecordFoodInfo
 import com.example.record_dang.databinding.ActivityFoodAfterBinding
 
@@ -19,8 +21,15 @@ class FoodAfterActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        binding.foodAfterSave.setOnClickListener {
+            Toast.makeText(this,"저장되었습니다.", Toast.LENGTH_LONG).show()
+            onBackPressed()
+        }
+
         setFoodAfterAdapter()
-        setFoodAfterListData()
+        //setFoodAfterListData()
+
+        binding.btnAddFood.setOnClickListener { addFoodAfterListData() }
     }
 
 
@@ -47,6 +56,19 @@ class FoodAfterActivity : AppCompatActivity() {
                 RecordFoodInfo(
                     foodName = "된찌",
                     foodKcal = "200"
+                )
+            )
+        )
+
+        foodAfterListAdapter.notifyDataSetChanged()
+    }
+
+    private fun addFoodAfterListData(){
+        foodAfterListAdapter.foodList.addAll(
+            listOf<RecordFoodInfo>(
+                RecordFoodInfo(
+                    foodName = "",
+                    foodKcal = "",
                 )
             )
         )

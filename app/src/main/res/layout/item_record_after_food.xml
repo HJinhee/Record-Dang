@@ -12,23 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <EditText
             android:id="@+id/item_after_food_food"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_after_food_kcal"
-            android:text="@{recordFoodData.foodName}" />
+            android:text="@{recordFoodData.foodName}"
+            android:hint="음식"
+            />
 
-        <TextView
+        <EditText
             android:id="@+id/item_after_food_kcal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_after_food_food"
-            android:text="@{recordFoodData.foodKcal}" />
+            android:text="@{recordFoodData.foodKcal}"
+            android:hint="칼로리"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

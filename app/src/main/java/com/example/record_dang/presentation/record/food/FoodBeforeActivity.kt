@@ -19,7 +19,7 @@ import com.google.android.youtube.player.*
 
 class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener{
     private val TAG = "YoutubeActivity"
-    val YOUTUBE_VIDEO_ID = "Evfe8GEn33w"
+    val YOUTUBE_VIDEO_ID = "ffuakdFmuh4"
     val YOUTUBE_PLAYLIST = "UCU3jy5C8MB-JvSw_86SFV2w"
 
     private lateinit var binding: ActivityFoodBeforeBinding
@@ -41,6 +41,15 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
 
         binding.ivFoodBeforeBack.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.foodBeforeSave.setOnClickListener {
+            Toast.makeText(this,"저장되었습니다.",Toast.LENGTH_LONG).show()
+            onBackPressed()
+        }
+
+        binding.btnFoodIngredSave.setOnClickListener {
+            binding.recyclerviewRecommendRefri.visibility = View.VISIBLE
         }
 
         setFoodBeforeAdapter()
@@ -72,10 +81,18 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
             dlg.show()
         }
 
-        //binding.youtubeView.initialize("6RQ-bBdASvk", this)
+        //binding.youtubeView.initialize("ffuakdFmuh4", this)
+
+        //클릭리스너 등록
+        foodBeforeListAdapter.setOnItemClickListener( object : FoodBeforeListAdapter.OnItemClickListener{
+            override fun onClick(view: View?, position: Int) {
+                binding.youtubeView.visibility = View.VISIBLE
+                Log.d("SSS", "${position}번 리스트 선택")
+            }
+        })
 
         bindingItem.itemBtnYoutube.setOnClickListener {
-
+            binding.youtubeView.visibility = View.VISIBLE
             Toast.makeText(this@FoodBeforeActivity, "button click", Toast.LENGTH_SHORT).show()
             initYoutube()
 
@@ -159,15 +176,19 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
             listOf<UserFoodRecoInfo>(
                 UserFoodRecoInfo(
                     checked = false,
-                    foodName = "된찌"
+                    foodName = "된장찌개"
                 ),
                 UserFoodRecoInfo(
                     checked = true,
-                    foodName = "밥"
+                    foodName = "쌈밥"
                 ),
                 UserFoodRecoInfo(
                     checked = false,
-                    foodName = "고기"
+                    foodName = "버섯무침"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "두부김치"
                 )
             )
         )
@@ -184,15 +205,31 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
             listOf<UserFoodRecoInfo>(
                 UserFoodRecoInfo(
                     checked = false,
-                    foodName = "된장찌개"
+                    foodName = "익힌 시금치"
                 ),
                 UserFoodRecoInfo(
                     checked = true,
-                    foodName = "밥"
+                    foodName = "계란말이"
                 ),
                 UserFoodRecoInfo(
                     checked = false,
-                    foodName = "고기"
+                    foodName = "닭 가슴살"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "계란찜"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "연근무침"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "국수말이"
+                ),
+                UserFoodRecoInfo(
+                    checked = false,
+                    foodName = "감자볶음"
                 )
             )
         )

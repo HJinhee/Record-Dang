@@ -2,6 +2,7 @@ package com.example.record_dang.presentation.record.medi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.record_dang.data.RecordExerciseInfo
 import com.example.record_dang.data.RecordMediInfo
 import com.example.record_dang.databinding.ActivityExerciseBinding
@@ -26,8 +27,13 @@ class MediActivity : AppCompatActivity() {
             addMediListData()
         }
 
+        binding.btnMediSave.setOnClickListener {
+            Toast.makeText(this,"저장되었습니다.", Toast.LENGTH_LONG).show()
+            onBackPressed()
+        }
+
         setMediAdapter()
-        setMediListData()
+       // setMediListData()
     }
 
 

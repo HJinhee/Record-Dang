@@ -2,6 +2,7 @@ package com.example.record_dang.presentation.record.exercise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.record_dang.data.RecordExerciseInfo
 import com.example.record_dang.data.RecordFoodInfo
 import com.example.record_dang.databinding.ActivityExerciseBinding
@@ -28,6 +29,11 @@ class ExerciseActivity : AppCompatActivity() {
 
         setExerciseAdapter()
         setExerciseListData()
+
+        binding.btnSaveExercise.setOnClickListener {
+            Toast.makeText(this,"저장되었습니다.", Toast.LENGTH_LONG).show()
+            onBackPressed()
+        }
     }
 
 

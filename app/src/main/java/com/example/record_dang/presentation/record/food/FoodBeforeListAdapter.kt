@@ -15,12 +15,12 @@ class FoodBeforeListAdapter : RecyclerView.Adapter<FoodBeforeListAdapter.FoodBef
     val foodList = mutableListOf<UserFoodRecoInfo>()
 
     interface OnItemClickListener {
-        fun onItemClick(view: View?, position: Int, isUser: Boolean)
+        fun onClick(view: View?, position: Int)
     }
 
     private var onItemClickListener: OnItemClickListener? = null
 
-    fun FoodBeforeListAdapter(onItemClickListener: OnItemClickListener?) {
+    fun setOnItemClickListener(onItemClickListener: OnItemClickListener?) {
         this.onItemClickListener = onItemClickListener
     }
 
@@ -57,6 +57,7 @@ class FoodBeforeListAdapter : RecyclerView.Adapter<FoodBeforeListAdapter.FoodBef
             binding.foodData = userFoodRecoInfo
 
             binding.itemBtnYoutube.setOnClickListener {
+                bindingActivity.youtubeView.visibility = View.VISIBLE
 
 //                val intent = Intent(Intent.ACTION_SEARCH)
 //                intent.setPackage("com.google.android.youtube")
@@ -65,8 +66,7 @@ class FoodBeforeListAdapter : RecyclerView.Adapter<FoodBeforeListAdapter.FoodBef
 //
 //                startActivity(intent)
                 // bindingActivity.initYoutube(activity = FoodBeforeActivity())
-                  bindingActivity.youtubeView.initialize("Evfe8GEn33w", this)
-
+                  bindingActivity.youtubeView.initialize("ffuakdFmuh4", this)
 
             }
 

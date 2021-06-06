@@ -21,7 +21,7 @@
             android:textAlignment="center"
             android:checked="@{foodData.checked}"
             android:text="@{foodData.foodName}"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
         
 
         <androidx.appcompat.widget.AppCompatButton
@@ -32,6 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginHorizontal="20dp"
+            android:textSize="15sp"
             android:background="@color/light_green_2"
             android:text="레시피 보러가기" />
 

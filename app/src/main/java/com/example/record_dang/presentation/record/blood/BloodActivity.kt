@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.record_dang.R
 import com.example.record_dang.databinding.ActivityBloodBinding
 
@@ -32,6 +33,11 @@ class BloodActivity : AppCompatActivity(){
             hbamg = (totalBlood / 4)
             danger()
             binding.textAverageBlood.text = hbaper.toString()
+        }
+
+        binding.btnBloodSave.setOnClickListener {
+            Toast.makeText(this,"저장되었습니다.",Toast.LENGTH_LONG).show()
+            onBackPressed()
         }
 
 
