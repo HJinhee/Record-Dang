@@ -54,6 +54,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!--그래프-->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/day_chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/cl_graph_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
 
 
