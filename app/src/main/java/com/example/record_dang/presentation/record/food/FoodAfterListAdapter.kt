@@ -1,4 +1,4 @@
-package com.example.record_dang.presentation.record;
+package com.example.record_dang.presentation.record.food;
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

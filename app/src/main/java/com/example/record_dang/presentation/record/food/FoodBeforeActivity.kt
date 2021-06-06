@@ -1,6 +1,5 @@
-package com.example.record_dang.presentation.record
+package com.example.record_dang.presentation.record.food
 
-import android.app.PendingIntent.getActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.record_dang.R
 import com.example.record_dang.data.UserFoodRecoInfo

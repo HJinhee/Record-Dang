@@ -1,10 +1,8 @@
-package com.example.record_dang.presentation.record
+package com.example.record_dang.presentation.record.food
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.record_dang.R
 import com.example.record_dang.data.RecordFoodInfo
-import com.example.record_dang.data.UserFoodRecoInfo
 import com.example.record_dang.databinding.ActivityFoodAfterBinding
 
 class FoodAfterActivity : AppCompatActivity() {

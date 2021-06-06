@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.record_dang">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecordDang">
-        <activity android:name=".presentation.record.FoodBeforeActivity" />
-        <activity android:name=".presentation.record.FoodAfterActivity" />
-        <activity android:name=".presentation.record.FoodABActivity" />
+        <activity android:name=".presentation.record.medi.MediActivity"></activity>
+        <activity android:name=".presentation.record.blood.BloodActivity" />
+        <activity android:name=".presentation.record.exercise.ExerciseActivity" />
+        <activity android:name=".presentation.record.food.FoodBeforeActivity" />
+        <activity android:name=".presentation.record.food.FoodAfterActivity" />
+        <activity android:name=".presentation.record.food.FoodABActivity" />
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".SignInActivity"

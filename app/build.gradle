@@ -64,5 +64,9 @@ dependencies {
     //databinding
     kapt 'com.android.databinding:compiler:4.1.2'
 
+    //roundedimageview
+    implementation'com.makeramen:roundedimageview:1.2.4'
+
+
 
 }

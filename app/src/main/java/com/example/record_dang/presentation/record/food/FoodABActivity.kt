@@ -1,9 +1,8 @@
-package com.example.record_dang.presentation.record
+package com.example.record_dang.presentation.record.food
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.record_dang.R
 import com.example.record_dang.databinding.ActivityFoodAbBinding
 
 class FoodABActivity : AppCompatActivity() {
@@ -20,12 +19,12 @@ class FoodABActivity : AppCompatActivity() {
         }
 
         binding.btnFoodAfter.setOnClickListener{
-            val intent = Intent(this,FoodAfterActivity::class.java)
+            val intent = Intent(this, FoodAfterActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnFoodBefore.setOnClickListener{
-            val intent = Intent(this,FoodBeforeActivity::class.java)
+            val intent = Intent(this, FoodBeforeActivity::class.java)
             startActivity(intent)
         }
 

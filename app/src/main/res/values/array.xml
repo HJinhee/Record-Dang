@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blood_time_array">
+        <item>아침 식사 전</item>
+        <item>아침 식사 후</item>
+        <item>점심 식사 전</item>
+        <item>점심 식사 후</item>
+        <item>저녁 식사 전</item>
+        <item>저녁 식사 후</item>
+        <item>자기 전</item>
+        <item>기타</item>
+    </string-array>
+
+</resources>
