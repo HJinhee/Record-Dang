@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.record_dang">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecordDang">
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".presentation.record.medi.MediActivity"></activity>
+        <activity android:name=".presentation.record.blood.BloodActivity" />
+        <activity android:name=".presentation.record.exercise.ExerciseActivity" />
+        <activity android:name=".presentation.record.food.FoodBeforeActivity" />
+        <activity android:name=".presentation.record.food.FoodAfterActivity" />
+        <activity android:name=".presentation.record.food.FoodABActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
@@ -20,8 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name_kor"
             android:textSize="40sp"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -65,12 +66,14 @@
             app:layout_constraintStart_toStartOf="@id/et_login_id"
             app:layout_constraintTop_toBottomOf="@+id/et_login_id" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/login"
+            android:background="@color/yellow"
+            android:fontFamily="@font/black_han_sans_regular"
             app:layout_constraintEnd_toEndOf="@id/et_login_pw"
             app:layout_constraintStart_toStartOf="@id/tv_login_pw"
             app:layout_constraintTop_toBottomOf="@id/et_login_pw" />
@@ -105,6 +108,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_sign_up_check"
                 app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/black_han_sans_regular"
+
 
                 />
 
