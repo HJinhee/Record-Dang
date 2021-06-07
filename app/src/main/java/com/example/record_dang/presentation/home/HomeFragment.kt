@@ -63,6 +63,48 @@ class HomeFragment : Fragment() {
                     etc = "아침",
                     context = "120",
                     unit = "mg/dL"
+                ),
+                HomeDataInfo(
+                    title = "된장찌개",
+                    etc = "",
+                    context = "300",
+                    unit = "Kcal"
+                ),
+                HomeDataInfo(
+                    title = "쌀밥",
+                    etc = "",
+                    context = "100",
+                    unit = "Kcal"
+                ),
+                HomeDataInfo(
+                    title = "계란말이",
+                    etc = "",
+                    context = "80",
+                    unit = "Kcal"
+                ),
+                HomeDataInfo(
+                    title = "익힌 시금치",
+                    etc = "",
+                    context = "30",
+                    unit = "Kcal"
+                ),
+                HomeDataInfo(
+                    title = "혈당",
+                    etc = "자기전",
+                    context = "150",
+                    unit = "mg/dl"
+                ),
+                HomeDataInfo(
+                    title = "인슐린",
+                    etc = "아침",
+                    context = "오른쪽 배 윗쪽",
+                    unit = " 1회"
+                ),
+                HomeDataInfo(
+                    title = "감기약",
+                    etc = "점심",
+                    context = "",
+                    unit = "1회"
                 )
             )
         )

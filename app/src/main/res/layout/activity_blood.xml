@@ -174,7 +174,7 @@
                 android:textSize="30sp"
                 android:fontFamily="@font/black_han_sans_regular"
                 android:layout_marginStart="10dp"
-                android:text="정상"
+                android:text="당뇨병"
                 />
 
 

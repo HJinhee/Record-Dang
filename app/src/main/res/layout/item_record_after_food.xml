@@ -20,6 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_after_food_kcal"
             android:text="@{recordFoodData.foodName}"
+            android:privateImeOptions="defaultInputmode=korean"
             android:hint="음식"
             />
 

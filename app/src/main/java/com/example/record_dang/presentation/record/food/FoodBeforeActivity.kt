@@ -179,7 +179,7 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
                     foodName = "된장찌개"
                 ),
                 UserFoodRecoInfo(
-                    checked = true,
+                    checked = false,
                     foodName = "쌈밥"
                 ),
                 UserFoodRecoInfo(
@@ -208,7 +208,7 @@ class FoodBeforeActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedLis
                     foodName = "익힌 시금치"
                 ),
                 UserFoodRecoInfo(
-                    checked = true,
+                    checked = false,
                     foodName = "계란말이"
                 ),
                 UserFoodRecoInfo(

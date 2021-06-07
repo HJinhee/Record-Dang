@@ -20,6 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_medi_time"
             android:hint="약물"
+            android:privateImeOptions="defaultInputmode=korean"
             android:text="@{recordMediData.mediName}" />
 
         <EditText
@@ -30,6 +31,7 @@
             app:layout_constraintEnd_toStartOf="@id/item_medi_location"
             app:layout_constraintStart_toEndOf="@id/item_medi_kind"
             android:hint="시간"
+            android:privateImeOptions="defaultInputmode=korean"
             android:text="@{recordMediData.mediTime}" />
 
         <EditText
@@ -40,6 +42,7 @@
             app:layout_constraintStart_toEndOf="@id/item_medi_time"
             app:layout_constraintEnd_toStartOf="@id/item_medi_count"
             android:hint="위치"
+            android:privateImeOptions="defaultInputmode=korean"
             android:text="@{recordMediData.mediLocation}" />
 
         <EditText
@@ -50,6 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/item_medi_location"
             android:hint="횟수"
+            android:privateImeOptions="defaultInputmode=korean"
             android:text="@{recordMediData.mediCount}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

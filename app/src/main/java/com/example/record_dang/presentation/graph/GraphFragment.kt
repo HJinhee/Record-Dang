@@ -55,6 +55,7 @@ class GraphFragment : Fragment() {
     }
 
     private fun setWeekChart() {
+        binding.weekChart.visibility = View.GONE
         binding.dayChart.visibility = View.VISIBLE
 
         val morning = ArrayList<BarEntry>()
@@ -122,6 +123,7 @@ class GraphFragment : Fragment() {
 
 
     private fun setDayChart(){
+        binding.weekChart.visibility = View.GONE
         binding.dayChart.visibility = View.VISIBLE
 
         val morningBef = ArrayList<BarEntry>()

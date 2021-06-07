@@ -6,11 +6,13 @@ import android.widget.Toast
 import com.example.record_dang.data.RecordExerciseInfo
 import com.example.record_dang.data.RecordFoodInfo
 import com.example.record_dang.databinding.ActivityFoodAfterBinding
+import com.example.record_dang.presentation.home.HomeListAdapter
 
 class FoodAfterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFoodAfterBinding
     private lateinit var foodAfterListAdapter: FoodAfterListAdapter
+    private lateinit var homeListAdapter: HomeListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
